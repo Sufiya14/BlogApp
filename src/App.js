@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Create from './Components/Create';
+import Details from './Components/Details';
+import NotFound from './Components/NotFound';
+import Update from './Components/Update';
+import { GlobalProvider } from './Context/GlobalState';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <Router>
+        <>
+          <Navbar title="BlogApp" add="AddBlog" home='Home' />
+          <Switch>
+            <Route exact path="/"><Home /></Route>
+            <Route path="/create"><Create /></Route>
+            <Route path="/blogs/:id"><Details /></Route>
+            <Route path="/edit/:id"><Update /></Route>
+            <Route path="*"><NotFound /></Route>
+          </Switch>
+        </>
+      </Router>
+    </GlobalProvider>
   );
 }
 

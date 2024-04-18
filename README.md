@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+###UseFetch is used for json data only.
+I used BlogList.js to display  list of blogs which comes thorugh home.js. on the top there is addblog option which takes the user to create.js to adda new blog. 
+on clicking on any blog in the home takes you to the details.js page which contains edit(update.js) ,delete,like(on the same detail page ) functionality. 
+A notfound.js page to gave a message regarding wrong url.
+
+for contextApi, there is two js files AppReducer.js which contains which actions to be performed and GlobalState.js whcih conatins initial state and context and provider , actions.
